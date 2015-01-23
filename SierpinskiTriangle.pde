@@ -5,23 +5,31 @@ int sizeSier = detail*10;
 
 public void setup()
 {
-	size((sizeSier/2)*(5/4), (sizeSier/2) * (5/4)); //trying to fit the triangle
+	background(100, 5);
+	size(sizeSier+sizeSier/4, sizeSier+sizeSier/4); //fits the triangle
 }
 
+public int count = 5;
 public void draw()
 {
-	sierpinski(sizeSier/8, sizeSier - sizeSier/8, sizeSier);
+	sierpinski(sizeSier/8, sizeSier+sizeSier/8, sizeSier);
+
+	if (sizeSier <= 0)
+	{
+		count = 5;
+	}
+	if (sizeSier >= 500)
+	{
+		count = -5;
+	}
+	println("count: "+count);
+	sizeSier += count;
 }
 
 public void mouseMoved()//optional
 {
-	double prevMouseX = 0;
-
 	//sizeSier++;
-	if (detail > 0)
-	{
-		detail--;
-	}
+	detail = mouseX/2;
 }
 
 public void sierpinski(int x, int y, int len) 
@@ -38,8 +46,3 @@ public void sierpinski(int x, int y, int len)
 		triangle(x, y, x+len/2, y-len, x+len, y);
 	}
 }
-
-/*
-20 A
-21 
-*/
