@@ -30,6 +30,7 @@ public void draw()
 {
 	sierpinski(sizeSier/8, sizeSier+sizeSier/8, sizeSier);
 
+	//animation
 	if (sizeSier <= 0)
 	{
 		count = 5;
@@ -38,7 +39,6 @@ public void draw()
 	{
 		count = -5;
 	}
-	println("count: "+count);
 	sizeSier += count;
 }
 
