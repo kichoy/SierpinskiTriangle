@@ -48,7 +48,7 @@ public void mouseMoved()//optional
 	detail = mouseX/2;
 }
 
-public void sierpinski(int x, int y, int len) 
+public void sierpinski(int x, int y, int len) //recursive func to draw sierpinski triangle
 {
 	if (len > detail)
 	{
